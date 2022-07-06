@@ -22,9 +22,11 @@ function Header() {
                         spellcheck={false}
                         type="text"
                     />
+
                     <button className={cx('clear')}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
+
                     <FontAwesomeIcon
                         className={cx('loading')}
                         icon={faSpinner}
@@ -34,6 +36,7 @@ function Header() {
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
                 </div>
+
                 <div className={cx('actions')}></div>
             </div>
         </header>
