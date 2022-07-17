@@ -12,8 +12,6 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
-    faMessage,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
@@ -27,6 +25,14 @@ import { useEffect, useState } from 'react';
 import AccountItem from '~/components/SearchAccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import {
+    InboxIcon,
+    LiveActiveIcon,
+    LiveIcon,
+    MessageIcon,
+    UploadIcon,
+} from '~/components/Icon';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -153,12 +159,31 @@ function Header() {
                     {currentUser ? (
                         <>
                             <Tippy
-                                delay={300}
+                                delay={200}
                                 content={'Up Load'}
                                 placement="bottom"
                             >
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy
+                                delay={200}
+                                content={'Message'}
+                                placement="bottom"
+                            >
+                                <button className={cx('actions-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+
+                            <Tippy
+                                delay={200}
+                                content={'Inbox'}
+                                placement="bottom"
+                            >
+                                <button className={cx('actions-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -173,7 +198,7 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src=" https://scr.vn/wp-content/uploads/2020/07/avt-cute.jpg"
                                 alt="avatar"
